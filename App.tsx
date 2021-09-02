@@ -32,7 +32,7 @@ if (!loaded) return null;
   return (
     <>
       <Feed />
-      <StatusBar style="auto" />
+      <StatusBar style="dark" backgroundColor="#fff" translucent={false}/>
     </>
   );
 }
