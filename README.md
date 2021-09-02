@@ -1,3 +1,2 @@
 # pokedex-native
-hoi 
-Leticia né?
+This is a pokedex that was teached by @brennop on the "foca-stack wiki" by CJR UNB
