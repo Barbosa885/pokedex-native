@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import Card from '../components/Card';
 
 
@@ -14,11 +14,11 @@ export default function Feed() {
     }, [])
     
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             {pokemons.map(pokemon => (
                 <Card key={pokemon.id} pokemon={pokemon}/>
             ))}                                         
-        </View>
+        </ScrollView>
     
     );
 }
@@ -28,8 +28,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
         width: "100%",
+    },
+    contentContainer: {
         flexWrap: "wrap",
         flexDirection: "row",
         justifyContent: "center",
+        
     }
 })
