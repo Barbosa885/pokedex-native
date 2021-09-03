@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
 import { Colors, Sizing } from '../styles';
+import TypeIcon from './Typeicon';
 
 type CardProps = {
     pokemon: Pokemon
@@ -12,8 +13,8 @@ export default function Card({ pokemon }: CardProps){
             <Text style={styles.name}>{pokemon.name}</Text>
             <Text style={styles.number}>#{pokemon.number}</Text>
             <Image style={styles.image} source={{ uri: pokemon.image_url }} />
-            <View>
-                <Text>{pokemon.kind}</Text>
+            <View style={styles.type}>
+                {pokemon.kind.split(';').map(type => <TypeIcon type={type} key={type}/>)}
             </View>
         </View>
     )}
@@ -53,5 +54,10 @@ const styles = StyleSheet.create({
         width: 96,
         height: 96,
       },
+    
+      type: {
+          flexDirection: "row",
+          justifyContent: "center",
+      }
     
 });

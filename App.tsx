@@ -17,6 +17,8 @@ import {
   Barlow_700Bold,
 } from "@expo-google-fonts/barlow";
 
+import AppLoading from 'expo-app-loading';
+
 export default function App() {
   let [loaded] = useFonts({
     Inter_400Regular,
@@ -27,7 +29,7 @@ export default function App() {
     Barlow_700Bold,
   });
 
-if (!loaded) return null;
+if (!loaded) return <AppLoading />;
 
   return (
     <>
